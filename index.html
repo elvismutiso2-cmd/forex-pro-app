@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Forex Pro App</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <h1>Forex Pro App</h1>
+    <nav>
+      <button onclick="showSection('prices')">📈 Live Prices</button>
+      <button onclick="showSection('journal')">📝 Journal</button>
+      <button onclick="showSection('history')">📊 Trade History</button>
+      <button onclick="showSection('risk')">📌 Risk Calculator</button>
+    </nav>
+  </header>
+
+  <!-- Live Prices Section -->
+  <section id="prices" class="active">
+    <h2>Live Forex Prices</h2>
+    <div id="live-prices">Loading prices...</div>
+  </section>
+
+  <!-- Trading Journal Section -->
+  <section id="journal">
+    <h2>Trading Journal</h2>
+    <form id="journal-form">
+      <input type="date" id="trade-date" required />
+      <input type="text" id="trade-pair" placeholder="Pair (e.g. EUR/USD)" required />
+      <input type="number" id="trade-profit" placeholder="Profit/Loss ($)" required />
+      <button type="submit">Add Trade</button>
+    </form>
+    <ul id="journal-list"></ul>
+  </section>
+
+  <!-- Trade History Section -->
+  <section id="history">
+    <h2>Trade History</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Date</th>
+          <th>Pair</th>
+          <th>Profit/Loss</th>
+        </tr>
+      </thead>
+      <tbody id="trade-history"></tbody>
+    </table>
+  </section>
+
+  <!-- Risk Calculator Section -->
+  <section id="risk">
+    <h2>Risk Calculator</h2>
+    <form id="risk-form">
+      <input type="number" id="account-size" placeholder="Account Size ($)" required />
+      <input type="number" id="risk-percent" placeholder="Risk (%)" required />
+      <input type="number" id="stop-loss" placeholder="Stop Loss (pips)" required />
+      <input type="number" id="pip-value" placeholder="Pip Value ($)" required />
+      <button type="submit">Calculate</button>
+    </form>
+    <p id="risk-result"></p>
+  </section>
+
+  <script src="app.js"></script>
+</body>
+        </html>
